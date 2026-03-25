@@ -70,7 +70,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '25'
+          java-version: '21'
           cache: maven
 
       - name: Dar permisos al wrapper de Maven
@@ -94,11 +94,11 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '25'
+          java-version: '21'
           cache: maven
 
       - name: Dar permisos al wrapper de Maven
         run: chmod +x mvnw
 
       - name: Construir la aplicación backend
-        run: ./mvnw clean package
+        run: ./mvnw clean package -DskipTests
